@@ -1,0 +1,15 @@
+<h1> Product Category </h1>
+
+<p> Buy Something from us! </p>
+
+<body>
+		<% @products.each do |mm| %>
+		<ul>
+			<li><%= mm.name %> $<%= mm.price %>.00</li>
+			
+
+		</ul>
+		
+			<% end %>
+</body>
+
