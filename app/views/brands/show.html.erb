@@ -1,0 +1,18 @@
+
+<h1> <%= @brand.name %></h1>
+
+
+<head> 
+	<li> Product Name</li>
+	<li> Price </li>
+	
+
+<body>
+	<% @products.each do |value| %>  
+	 	
+	<ul>
+		<li><%= value.name  %></li>
+		<li><%= number_to_currency(value.price) %></li>
+	</ul>
+		<% end %>
+</body>

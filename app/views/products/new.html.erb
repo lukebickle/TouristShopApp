@@ -1,0 +1,23 @@
+<h1>Add a New Product</h1>
+
+<%= form_for @products do |f| %>
+  
+  <p>
+    <%= f.label :brand_id %>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name %>	
+
+  </p>
+  
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </p>
+  
+  <%= f.submit %>
+  
+<% end %>

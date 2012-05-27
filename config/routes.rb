@@ -1,12 +1,22 @@
 TouristShopApp::Application.routes.draw do
 
-  get "sessions/new"
+  resources :reviews
 
-  get "sessions/create"
+  get "sessions/new", as: :new_session
+  post "sessions/create", as: :sessions
 
-  get "sessions/destroy"
+ 
+    
+  # get "brands/:id" => "brands#show", as: :brand
+  
+  get "logout" => 'sessions#destroy', as: :logout   
+  
+   resources :products
+   
+   get "brands/show"
+   get "brands/:id" => "brands#show", :as => :brand
+   
 
-get "shops" => "products#index", as: :shops
-
-
+   root to: "products#index"   
+ 
 end

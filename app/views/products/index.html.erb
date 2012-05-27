@@ -2,14 +2,34 @@
 
 <p> Buy Something from us! </p>
 
-<body>
-		<% @products.each do |mm| %>
-		<ul>
-			<li><%= mm.name %> $<%= mm.price %>.00</li>
+<table>
+	
+	
+	
+	<thead>
+    <tr>
+      <th>Brand</th>
+      <th>Product Name</th>
+      <th>Avg Rating</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+	
+	
+	<tbody>
+	<% @products.each do |product| %>
+		<tr>
+			<td><%= link_to product.brand.name, brand_url(product.brand.id) %></td>
+			<ltd><%= link_to product.name, product_url(product) %></td>
+			<td><%= product.reviews.average('rating').to_i%></td>
+			<td><%= number_to_currency(product.price)%></td>
+			
+		
 			
 
-		</ul>
+		</tr>
 		
-			<% end %>
-</body>
+	<% end %>
+	</tbody>
+</table>
 

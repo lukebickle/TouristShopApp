@@ -1,0 +1,5 @@
+<h1><%= @product.name %></h1>
+
+<p>This product is gonna cost ya <%= number_to_currency(@product.price) %></p>
+
+<%= link_to "Review This Product", new_review_url %>
